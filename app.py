@@ -94,10 +94,10 @@ st.markdown("""
 def load_data():
     # Look for parquet in same directory as app
     app_dir = os.path.dirname(os.path.abspath(__file__))
-    parquet_path = os.path.join(app_dir, "data", "ES_clean_1min.parquet")
+    parquet_path = os.path.join(app_dir, "data", "ES_precomputed.parquet")
     if not os.path.exists(parquet_path):
         # Fallback: look in app root
-        parquet_path = os.path.join(app_dir, "ES_clean_1min.parquet")
+        parquet_path = os.path.join(app_dir, "ES_precomputed.parquet")
     
     df = pd.read_parquet(parquet_path)
     if not isinstance(df.index, pd.DatetimeIndex):
